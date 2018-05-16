@@ -9,19 +9,19 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    mars_images = mongo.db.mars_images.find_one()
-    return render_template("index.html", mars_images=mars_images)
+    result = mongo.db.mars_images.find_one()
+    return render_template("index.html", result=result)
 
 
 @app.route("/scrape")
 def scrape():
-    mars_images = mongo.db.mars_images
-    mars_images_data = scrape_mars.scrape()
+    result = mongo.db.result
+    mars_data = scrape_mars.scrape()
     print("After calling scrape");
-    print(mars_images_data)
-    mars_images.update(
+    #print(mars_data)
+    result.update(
         {},
-        mars_images_data,
+        mars_data,
         upsert=True
     )
     print("Done Inserting");

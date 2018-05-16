@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Mars Images</title>
+  <title>Hot Finds</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
@@ -13,26 +13,20 @@
   <div class="container">
 
     <div class="jumbotron text-center">
-      <h1>Mars Images</h1>
-      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Mars Images</a></p>
+      <h1>Hot Finds On Craigslist</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Find Awesome Deals</a></p>
     </div>
 
     <!-- Craigslist Listings -->
-    <!-- <div class="row" id="craiglist-listings"> -->
-	<div>
-      <!--<div class="col-md-12">-->
-        <!-- <h4 class="heading">{{mars_images.title}} {{mars_images.img_url}}</h4>-->
-		<ul>
-		{% for key, value in mars_images.items(): %}
-          <li>{{ key }} </li>
-          <li><img src= "{{ value }}" height="42" width="42"></li>
-        {% endfor %}
-		</ul>
-		
-    </div>
+    <div class="row" id="craiglist-listings">
+      <div class="col-md-12">
+        <h4 class="heading">{{result.news_title}} {{result.news_para}}</h4>
+        <small>{{result.featured_image}}</small>
+      </div>
     </div>
 
   </div>
 </body>
 
 </html>
+
