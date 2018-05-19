@@ -9,7 +9,7 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    result = mongo.db.mars_images.find_one()
+    result = mongo.db.mars.find_one()
     return render_template("index.html", result=result)
 
 
